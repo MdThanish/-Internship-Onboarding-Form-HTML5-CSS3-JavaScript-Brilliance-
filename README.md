@@ -2,7 +2,8 @@
 
 This project is a simple yet effective Internship Joining Form designed to streamline the onboarding process for interns. Developed as part of a task by Macberries Info Tech at Tanjore, this form provides a user-friendly interface for interns to input their details and join the internship program hassle-free.
 
-![Internship Joining Form](screenshot.png)
+![Internship Joining Form](lv_0_20240221172345.gif)
+
 
 ## Task Process 🛠️
 
