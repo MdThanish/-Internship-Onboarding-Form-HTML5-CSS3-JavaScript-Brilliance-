@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Joining Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://media1.giphy.com/media/l1Et7Qw1XjvunS0Io/giphy.gif?cid=ecf05e47yhwrcyltlu4u6z427we11cxm3itf1f5wwmrnufz3&ep=v1_gifs_related&rid=giphy.gif&ct=g');
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    #left-panel {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:#0056b3;
+      padding: 20px;
+      position: relative;
+    }
+
+    #left-panel img {
+      width: 350px;
+      height: 500px;
+    }
+
+    #right-panel {
+      flex: 2;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    #internship-logo {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    .error {
+      color: red;
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+      #left-panel {
+        display: none;
+      }
+      #right-panel {
+        flex: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="left-panel">
+    <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%;">
+      <img src="https://media2.giphy.com/media/RKYGoNOFHOOluVO7lp/200.webp?cid=790b7611hvek5s60opsgih1etg01nnc8w9vrqpe7dsjqwjpe&ep=v1_gifs_search&rid=200.webp&ct=g" alt="GIF">
+      <h style="font-weight: bold; color: white; margin-top: 200px;">Mohamed Thanish.M</h>
+      <p style="font-weight: bold; color: white; margin-top: 10px;font-size: 12px;">Copyright @2024</p>
+    </div>
+  </div>
+
+  <div id="right-panel">
+    <div class="container">
+      <img id="internship-logo" src="https://tse1.mm.bing.net/th?id=OIP.ylmfg8i0NEccIFYyT9ZMMgHaHa&pid=Api&P=0&h=220" alt="Company Logo">
+      <h2>Internship Joining Form</h2>
+      <p>Please fill in the form below to join the internship program.</p>
+      <form id="joiningForm">
+        <div class="form-group">
+          <label for="joinDate">Date of Joining:</label>
+          <input type="date" id="joinDate" name="joinDate" required>
+        </div>
+        <div class="form-group">
+          <label for="internName">Name of the Intern:</label>
+          <input type="text" id="internName" name="internName" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="text" id="age" name="age" readonly>
+        </div>
+        <div class="form-group">
+          <label for="dept">Department:</label>
+          <select id="dept" name="dept" required onchange="showDepartmentInput()">
+            <option value="">Select Department</option>
+            <option value="AI&DS">AI&DS</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+            <option value="OTHER">OTHER</option>
+          </select>
+        </div>
+        <div id="otherDepartment" style="display:none;">
+          <label for="otherDeptInput">Type the Department Name:</label>
+          <input type="text" id="otherDeptInput" name="otherDeptInput">
+        </div>
+        <div class="form-group">
+          <label for="internPeriod">Internship Period (days):</label>
+          <input type="number" id="internPeriod" name="internPeriod" min="1" required>
+        </div>
+        <div class="form-group">
+          <label for="lastDate">Last Date:</label>
+          <input type="text" id="lastDate" name="lastDate" readonly>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('dob').addEventListener('change', function() {
+      var dob = new Date(this.value);
+      var today = new Date();
+      var age = today.getFullYear() - dob.getFullYear();
+      var monthDiff = today.getMonth() - dob.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        age--;
+      }
+      document.getElementById('age').value = age;
+    });
+
+    function showDepartmentInput() {
+      var select = document.getElementById("dept");
+      var otherDeptInput = document.getElementById("otherDepartment");
+
+      if (select.value === "OTHER") {
+        otherDeptInput.style.display = "block";
+      } else {
+        otherDeptInput.style.display = "none";
+      }
+    }
+
+    document.getElementById('internPeriod').addEventListener('input', function() {
+      var joinDate = new Date(document.getElementById('joinDate').value);
+      var internPeriod = parseInt(this.value);
+      if (!isNaN(internPeriod)) {
+        var lastDate = new Date(joinDate.getTime() + internPeriod * 24 * 60 * 60 * 1000);
+        var formattedLastDate = lastDate.getDate() + '/' + (lastDate.getMonth() + 1) + '/' + lastDate.getFullYear();
+        document.getElementById('lastDate').value = formattedLastDate;
+      }
+    });
+
+    document.getElementById('joiningForm').addEventListener('submit', function(event) {
+      // Perform form submission handling here
+      alert('Form submitted successfully!');
+      // Prevent default form submission
+      event.preventDefault();
+    });
+  </script>
+</body>
+</html>
